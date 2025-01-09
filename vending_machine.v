@@ -25,7 +25,7 @@ module vending_machine(clk, en, rst, nickel, dime, quarter, dispense, collect, a
 
     //////////////////////////////////////////////////////////////////
     // Next state (next_inserted) logic
-    always @(nickel or dime or quarter or en or rst) begin
+    always @(nickel or dime or quarter or en or rst or inserted) begin
         if (rst) begin
             next_inserted = 7'd0;
         end else if (en) begin
